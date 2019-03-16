@@ -247,6 +247,16 @@ public class MainActivity extends AppCompatActivity {
                 AnchorNode anchorNode = new AnchorNode(anchor);
                 anchorNode.setParent(arFragment.getArSceneView().getScene());
 
+                // 添加进链表
+                anchorNodes.add(anchorNode);
+
+                // 渲染各种Model
+                drawModel();
+
+                // 获取信息
+                tv_state.setText(getString(distances));
+
+
                 // 将Model添加到Anchor
                 TransformableNode coord = new TransformableNode(arFragment.getTransformationSystem());
                 coord.setParent(anchorNode);
